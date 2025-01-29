@@ -21,7 +21,7 @@ const CriarEvento = () => {
 
   // Função para carregar eventos do servidor
   const loadEventos = async () => {
-    const response = await fetch("http://localhost:3000/events");
+    const response = await fetch("https://apidata-nerdflbqz-tiagopalmeiras-projects.vercel.app/eventos");
     const data = await response.json();
     setEventos(data);
   };
@@ -35,7 +35,7 @@ const CriarEvento = () => {
     if (senha === senhaCorreta) {
       try {
         const response = await fetch(
-          `http://localhost:3000/events/${eventoParaExcluir.id}`,
+          `https://apidata-nerdflbqz-tiagopalmeiras-projects.vercel.app/eventos/${eventoParaExcluir.id}`,
           {
             method: "DELETE",
           }
@@ -88,7 +88,7 @@ const CriarEvento = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/events", {
+      const response = await fetch("https://apidata-nerdflbqz-tiagopalmeiras-projects.vercel.app/eventos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
