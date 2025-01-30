@@ -79,13 +79,15 @@ const CriarEvento = () => {
 
   const handleSubmit = async () => {
     const newEvent = {
-      title: novoEvento.title,
-      start: `${novoEvento.startDate}T${novoEvento.startTime}`,
-      end: `${novoEvento.endDate}T${novoEvento.endTime}`,
-      descricao: novoEvento.descricao,
-      uniforme: novoEvento.uniforme,
-      instrutor: novoEvento.instrutor,
-    };
+  title: novoEvento.title,
+  startDate: novoEvento.startDate, // Enviando apenas a data
+  startTime: novoEvento.startTime, // Enviando apenas o horário
+  endDate: novoEvento.endDate,
+  endTime: novoEvento.endTime,
+  descricao: novoEvento.descricao,
+  uniforme: novoEvento.uniforme,
+  instrutor: novoEvento.instrutor,
+};
 
     try {
       const response = await fetch("https://apidata-kappa.vercel.app/eventos", {
